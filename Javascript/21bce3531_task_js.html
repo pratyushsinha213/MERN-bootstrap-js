@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Task1 - JavaScript (21BCE3531)</title>
+    <style>
+        .login-container-task6 {
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            padding: 40px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .form-group-task6 {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .form-control-task6 {
+            width: 245px;
+            padding: 10px 10px 10px 40px;
+            background-color: #fafafa;
+            border: 1px solid #dbdbdb;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .form-group-task6 i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        .btn-primary-task6 {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-options-task6 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .login-options-task6 a {
+            color: #00376b;
+            text-decoration: none;
+        }
+
+        .signup-task6 {
+            font-size: 14px;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .signup-task6 a {
+            color: #3897f0;
+            text-decoration: none;
+        }
+
+        .form-check-task6 {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-check-task6-input {
+            margin-right: 5px;
+        }
+
+        .forgot-password-task6 a {
+            color: #3897f0;
+        }
+
+        @keyframes sliding {
+            from {
+                transform: translateX(0px);
+            }
+            to {
+                transform: translateX(1500px);
+            }
+        }
+
+        .task7-animate {
+            animation: sliding 5s ease-in infinite;
+        }
+
+        .containerTask8 {
+            background: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+
+        .containerTask8 h2 {
+            text-align: center;
+            color: #00376b;
+            margin-bottom: 20px;
+        }
+
+        .form-group-task8 {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group-task8 label {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-group-task8 input, .form-group-task8 select, .form-group-task8 textarea {
+            flex: 2;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .feedbackTask8 {
+            flex: 1;
+            text-align: right;
+            color: red;
+            font-weight: bold;
+        }
+
+        .genderTask8, .languagesTask8 {
+            display: flex;
+            align-items: center;
+        }
+
+        .genderTask8 label, .languagesTask8 label {
+            margin-right: 10px;
+        }
+
+        .form-footer-task8 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .form-footer-task8 a {
+            color: #00376b;
+            text-decoration: none;
+        }
+
+        .btn-task8 {
+            background-color: #3897f0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-task8:hover {
+            background-color: #3071a9;
+        }
+    </style>
+    </style>
+    
+</head>
+<body>
+    <h1>JavaScript Task (Pratyush Sinha)</h1>
+
+    <h3>Task1</h3>
+    <input id="num" type="text" placeholder="Enter Number">
+    <button onclick="reverseNumTask1()">Reverse Num</button>
+    <button type="reset" onclick="document.getElementById('answer1').innerHTML=''">Reset</button>
+    <p id="answer1"></p>
+    
+    <br>
+    <br>
+    <br>
+    
+    <h3>Task2</h3>
+    <input id="alpha" type="text" placeholder="Enter String">
+    <button onclick="alphabeticalStringTask2()">String in Alphabetical Order</button>
+    <button type="reset" onclick="document.getElementById('answer2').innerHTML=''">Reset</button>
+    <p id="answer2"></p>
+
+    <br>
+    <br>
+    <br>
+    
+    <h3>Task3</h3>
+    <p id="firstnum">1st Number : <input id="first" type="text" placeholder="Enter First Num"></p>
+    <p id="secondnum">2nd Number : <input id="second" type="text" placeholder="Enter Second Num"></p>
+    <button onclick="multiplyTask3()">Multiply</button>
+    <button onclick="divideTask3()">Divide</button>
+    <button type="reset" onclick="document.getElementById('answer3').innerHTML=''">Reset</button>
+    <p id="answer3"></p>
+
+    <br>
+    <br>
+    <br>
+    
+    <h3>Task4</h3>
+    <button onclick="dateTask4()">Show Date</button>
+    <button type="reset" onclick="document.getElementById('answer4.1').innerHTML=''">Reset</button>
+    <p id="answer4.1"></p>
+    <button onclick="timeTask4()">Show Time</button>
+    <button type="reset" onclick="document.getElementById('answer4.2').innerHTML=''">Reset</button>
+    <p id="answer4.2"></p>
+
+    <br>
+    <br>
+    <br>
+    
+    <h3>Task5</h3>
+    <form action="#">
+        <p id="task5-name">Name: <input class="task5" type="text" name="" id="name" placeholder="Enter Name" required></p>
+        <p id="task5-email">Email: <input class="task5" type="email" name="" id="email" placeholder="Enter Email" required></p>
+        <p id="task5-web">Website: <input class="task5" type="url" name="" id="web" placeholder="Enter Website link" required></p>
+        <p id="task5-msg">Message: <textarea class="task5" name="" id="msg" placeholder="Enter Message" required></textarea></p>
+        <button id="submit" type="submit" onclick="submitTask5()">Submit</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+    
+    <h3>Task6</h3>
+    <div class="login-container-task6">
+        <h1 class="h3 mb-3 font-weight-normal">Instagram</h1>
+        <form>
+            <div class="form-group-task6">
+                <i class="fas fa-user"></i>
+                <input type="text" class="form-control-task6" id="username" placeholder="Username">
+            </div>
+            <div class="form-group-task6">
+                <i class="fas fa-lock"></i>
+                <input type="password" class="form-control-task6" id="password" placeholder="Password">
+            </div>
+            <button type="button" class="btn-primary-task6" onclick="loginTask6()">Log in</button>
+            <div class="login-options-task6">
+                <div class="form-check-task6">
+                    <input type="checkbox" class="form-check-task6-input" id="rememberMe">
+                    <label class="form-check-task6-label" for="rememberMe">Remember me</label>
+                </div>
+                <div class="forgot-password-task6">
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </div>
+        </form>
+        <div class="signup-task6">
+            Don't have an account? <a href="#">Sign up here.</a>
+        </div>
+    </div>
+    
+
+    <br>
+    <br>
+    <br>
+    
+    <h3>Task7</h3>
+    <div class="container my-5">
+        <p><img id="task7-image" src="./train.jpg" alt="train" width="200px"></p>
+        <p style="font-weight: bold;">Click the following buttons to handle animation <small style="color: red;">(Have to click two times initially to start and stop the animation)</small></p>
+        <button id="task7-btn-start" onclick="startTask7()">Start</button>
+        <button id="task7-btn-stop" onclick="stopTask7()">Stop</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    
+    <h3>Task8</h3>
+    <div class="containerTask8">
+        <h2>Registration Form</h2>
+        <form>
+            <div class="form-group-task8">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName">
+            </div>
+            <div class="form-group-task8">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName">
+            </div>
+            <div class="form-group-task8">
+                <label for="email">Email</label>
+                <input type="email" id="email">
+            </div>
+            <div class="form-group-task8">
+                <label for="passwordTask8">Password</label>
+                <input type="password" id="passwordTask8" oninput="validatePasswordTask8()">
+                <span class="feedbackTask8" id="passwordFeedback">POOR</span>
+            </div>
+            <div class="form-group-task8">
+                <label for="confirmPasswordTask8">Re-enter Password</label>
+                <input type="password" id="confirmPasswordTask8" oninput="validatePasswordTask8()">
+                <span class="feedbackTask8" id="confirmPasswordFeedback">POOR</span>
+            </div>
+            <div class="form-group-task8 genderTask8">
+                <label>Gender</label>
+                <input type="radio" name="genderTask8" value="male"> Male
+                <input type="radio" name="genderTask8" value="female"> Female
+            </div>
+            <div class="form-group-task8">
+                <label for="age">Age</label>
+                <input type="number" id="age">
+            </div>
+            <div class="form-group-task8">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone">
+            </div>
+            <div class="form-group-task8">
+                <label for="address">Address</label>
+                <textarea id="address"></textarea>
+            </div>
+            <div class="form-group-task8">
+                <label for="state">State</label>
+                <input type="text" id="state">
+            </div>
+            <div class="form-group-task8">
+                <label for="country">Country</label>
+                <select id="country">
+                    <option value="">Choose your country</option>
+                </select>
+            </div>
+            <div class="form-group-task8 languagesTask8">
+                <label>Languages known</label>
+                <input type="checkbox" name="language" value="english"> English
+                <input type="checkbox" name="language" value="kannada"> Kannada
+                <input type="checkbox" name="language" value="hindi"> Hindi
+                <input type="checkbox" name="language" value="telugu"> Telugu
+            </div>
+            <div class="form-group-task8">
+                <input type="checkbox" id="agree">
+                <label for="agree">Hereby I declare all the given details are true</label>
+            </div>
+            <div class="form-footer-task8">
+                <a href="#">Log in to Ethnus website</a>
+                <button type="button" class="btn-task8" onclick="submitFormTask8()">REGISTER</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function reverseNumTask1() {
+            var temp = document.getElementById('num').value;
+            var num = Number(temp);
+            var rnum = "";
+            while (num > 0) {
+                var temp = num;
+                temp = temp%10;
+                rnum += String(temp);
+                num = Math.floor(num/10);
+            }
+            document.getElementById('answer1').innerHTML = ("Reverse Num: " + rnum);
+        }
+
+        function alphabeticalStringTask2() {
+            var alphabets = String(document.getElementById('alpha').value).split("");
+            // console.log(alphabets);
+            var sortedArr = alphabets.sort();
+            // console.log(sortedArr);
+            var sortedString = sortedArr.toString();
+            var newText = sortedString.replace(/,/g,""); //This replaces all instances of the the ',' character
+            // console.log(newText);
+            document.getElementById('answer2').innerHTML = ("String in Alphabetical Order: " + newText);
+        }
+
+        function multiplyTask3() {
+            var firstNum = Number(document.getElementById('first').value);
+            var secondNum = Number(document.getElementById('second').value);
+            // Result for multiplication
+            document.getElementById('answer3').innerHTML = ("The Result is: <br>" + firstNum*secondNum);
+        }
+
+        function divideTask3() {
+            var firstNum = Number(document.getElementById('first').value);
+            var secondNum = Number(document.getElementById('second').value);
+            // Result for division
+            document.getElementById('answer3').innerHTML = ("The Result is: <br>" + firstNum/secondNum);
+        }
+
+        function dateTask4() {
+            const date = new Date();
+            const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            document.getElementById('answer4.1').innerHTML = (date.getDate() + "/" + month[date.getMonth()] + "/" + date.getFullYear());
+        }
+
+        function timeTask4() {
+            const time = new Date();
+            document.getElementById('answer4.2').innerHTML = time;
+        }
+
+        function nameValidationTask5() {
+            const name = document.querySelector('#name');
+            if (!name.value) {
+                name.style.border = '3px solid red';
+                document.getElementById('task5-name').innerHTML += ('This field is required');
+            }
+        }
+            
+        function emailValidationTask5() {
+            const email = document.querySelector('#email');
+            if (!email.value) {
+                email.style.border = '3px solid red';
+                document.getElementById('task5-email').innerHTML += ('This field is required');
+            }
+        }
+
+        function websiteValidationTask5() {
+            const web = document.querySelector('#web');
+            if (!web.value) {
+                web.style.border = '3px solid red';
+                document.getElementById('task5-web').innerHTML += ('This field is required');
+            }
+        }
+
+        function msgValidationTask5() {
+            const msg = document.querySelector('#msg');
+            if (!msg.value) {
+                msg.style.border = '3px solid red';
+                document.getElementById('task5-msg').innerHTML += ('This field is required');
+            }
+        }
+            
+        function submitTask5() {
+            const submitButton = document.getElementById('submit');
+            submitButton.addEventListener('click', e => {
+                e.preventDefault();
+                nameValidationTask5();
+                emailValidationTask5();
+                websiteValidationTask5();
+                msgValidationTask5()
+            });
+        }
+        
+        function loginTask6() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (username && password) {
+                alert('Logged in successfully!');
+            } else {
+                alert('Please enter username and password.');
+            }
+        }
+
+        function startTask7() {
+            document.getElementById('task7-btn-start').addEventListener('click', () => {
+                var image = document.getElementById('task7-image');
+                image.classList.add('task7-animate');
+            });
+        }
+        
+        function stopTask7() {
+            document.getElementById('task7-btn-stop').addEventListener('click', () => {
+                var image = document.getElementById('task7-image');
+                image.classList.remove('task7-animate');
+            });
+        }
+
+        function validatePasswordTask8() {
+            var password = document.getElementById('passwordTask8').value;
+            var confirmPassword = document.getElementById('confirmPasswordTask8').value;
+            var feedbackTask8 = document.getElementById('passwordFeedback');
+            var confirmFeedback = document.getElementById('confirmPasswordFeedback');
+
+            if (password.length < 6) {
+                feedbackTask8.innerText = 'POOR';
+                feedbackTask8.style.color = 'red';
+            } else if (password.length < 8) {
+                feedbackTask8.innerText = 'AVG';
+                feedbackTask8.style.color = 'orange';
+            } else if (password.length < 10) {
+                feedbackTask8.innerText = 'GOOD';
+                feedbackTask8.style.color = 'blue';
+            } else {
+                feedbackTask8.innerText = 'PERFECT';
+                feedbackTask8.style.color = 'green';
+            }
+
+            if (password !== confirmPassword) {
+                confirmFeedback.innerText = 'POOR OR MISMATCH';
+                confirmFeedback.style.color = 'red';
+            } else if (confirmPassword.length >= 6) {
+                confirmFeedback.innerText = 'MATCH';
+                confirmFeedback.style.color = 'green';
+            } else {
+                confirmFeedback.innerText = 'POOR';
+                confirmFeedback.style.color = 'red';
+            }
+        }
+
+        function submitFormTask8() {
+            alert("Form submitted!");
+        }
+        
+    </script>
+
+</body>
+</html>
